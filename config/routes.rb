@@ -7,11 +7,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 
   resources :transactions, only: %i[create new index show] do
     member do
       get "confirmation", to: "transactions#confirmation"
     end
   end
-  # mount StripeEvent::Engine, at: '/stripe-webhooks'
 end
