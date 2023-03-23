@@ -1,4 +1,10 @@
+<div class="container mt-4 p-4">
+    <div class="center mb-4">
+      <p><%= @svg.html_safe %></p>
+    </div>
 
-<%= @svg.html_safe %>
-
-
+    <div class="center">
+      <%= link_to 'Download', root_path, class: "btn btn-primary round shadow" %>
+    </div>
+  </div>
+</div>
