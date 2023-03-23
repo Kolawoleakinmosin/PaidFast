@@ -1,0 +1,6 @@
+<h1>These are all my transactions</h1>
+<% @transactions.each do |transaction| %>
+<%= transaction %>
+ <p>Amount: <%= humanized_money_with_symbol(transaction.price) %></p>
+ <p><%= transaction.user.email %></p>
+<% end %>
