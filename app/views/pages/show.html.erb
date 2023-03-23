@@ -1,0 +1,13 @@
+<h2><%= @transaction.status %></h2>
+<p><%= @transaction.id %></p>
+<p><%= @transaction.timestamp %></p>
+<p><%= @transaction.status %></p>
+<p><%= @transaction.customer_name %></p>
+<p><%= @transaction.reference %></p>
+<p><%= link_to "New Transaction",
+  new_transaction_path(@transaction)
+%></p>
+<p><%= link_to "All Transaction",
+  transaction_path
+%></p>
+
