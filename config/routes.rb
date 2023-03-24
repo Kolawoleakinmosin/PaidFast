@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "/dashboard", to: "pages#dashboard"
   get "/qr-code", to: "pages#qr_generator"
   get "/playground", to: "pages#playground"
+  get "/qr-code/download", to: "pages#qr_code_download", as: :qr_code_download
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
