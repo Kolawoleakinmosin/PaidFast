@@ -1,6 +1,13 @@
 <h1>These are all my transactions</h1>
 <% @transactions.each do |transaction| %>
-<%= transaction %>
- <p>Amount: <%= humanized_money_with_symbol(transaction.price) %></p>
- <p><%= transaction.user.email %></p>
+<h3>Congratulations <%= transaction.user.email %>, You have a new Payment</h3>
+ <h5>You just received: <%= humanized_money_with_symbol(transaction.price) %></h5>
+ <h5>Customer Email: <%= transaction.customer_email %></h5>
+ <h5>Customer Name: <%= transaction.customer_name %></h5>
+ <h5>Payment Made At <%= transaction.timestamp %></h5>
+ <% if transaction.status %>
+ <h5>Transaction Status: ✅</h5>
+ <% else %>
+<h5>❌</h5>
+ <% end %>
 <% end %>

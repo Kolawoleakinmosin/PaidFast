@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_23_135051) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_24_043756) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,10 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_23_135051) do
     t.string "checkout_session_id"
     t.integer "price_cents", default: 0, null: false
     t.string "status", default: "pending"
-    t.string "phone"
-    t.string "network"
-    t.integer "last4"
-    t.string "postal_code"
+    t.string "customer_email"
     t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
@@ -47,6 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_23_135051) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "payment_link_id", default: "pi_3MopBrFXuS2Lu4ak23iBe0ED"
+    t.string "stripe_customer_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
