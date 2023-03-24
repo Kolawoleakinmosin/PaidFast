@@ -10,3 +10,16 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.homepage-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+body {
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+.main-content {
+  padding-top: 16px;
+}
