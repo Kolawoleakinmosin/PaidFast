@@ -1,9 +1,10 @@
 header {
   background-color: #ffffff;
   font-size: 14px;
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
+  z-index: 9999;
 }
 
 header h2 {

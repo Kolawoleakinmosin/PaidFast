@@ -11,7 +11,7 @@ puts "Destroying existing data"
 Transaction.destroy_all
 
 puts "creating a new transaction"
-5.times do
+10.times do
 Transaction.create!(
   user: User.first,
   timestamp: Time.now,
