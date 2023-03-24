@@ -1,13 +1,24 @@
-<h1>These are all my transactions</h1>
-<% @transactions.each do |transaction| %>
-<h3>Congratulations <%= transaction.user.email %>, You have a new Payment</h3>
- <h5>You just received: <%= humanized_money_with_symbol(transaction.price) %></h5>
- <h5>Customer Email: <%= transaction.customer_email %></h5>
- <h5>Customer Name: <%= transaction.customer_name %></h5>
- <h5>Payment Made At <%= transaction.timestamp %></h5>
- <% if transaction.status %>
- <h5>Transaction Status: ✅</h5>
- <% else %>
-<h5>❌</h5>
- <% end %>
-<% end %>
+<div class="container my-3">
+  <h1>Transactions</h1>
+  <div class="cards-grid-2 mt-1">
+  <% @transactions.each do |transaction| %>
+    <div class="d-flex card rounded-4 my-2">
+      <div class="card-body ">
+        <div class="d-flex align-items-center justify-content-between">
+        <% if transaction.status %>
+          <h1 class="mb-0 text-success"><i class="fa-solid fa-circle-arrow-down"></i></h1>
+        <% else %>
+          <h1 class="mb-0 text-danger"><i class="fa-solid fa-circle-arrow-down"></i></h1>
+          <% end %>
+            <div class="flex-column justify-content-center d-flex flex-grow-1 px-3">
+              <div><%= transaction.customer_name %></div>
+              <div><p class="text-secondary"><%= transaction.timestamp %><p></div>
+            </div>
+          <div><%= humanized_money_with_symbol(transaction.price) %></div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <p class="text-secondary">Updated: <%= Time.now %></p>
+</div>
