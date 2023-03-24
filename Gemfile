@@ -52,6 +52,10 @@ gem "sassc-rails"
 #qr code generator
 gem "rqrcode", "~> 2.0"
 
+#png image
+gem 'chunky_png'
+
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
