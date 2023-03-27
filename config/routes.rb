@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   # root "articles#index"
   mount StripeEvent::Engine, at: '/stripe-webhooks'
 
+  resources :products do
+    member do
+      get 'payment_link'
+    end
+  end
+
   resources :transactions, only: %i[create new index show] do
     member do
       get "confirmation", to: "transactions#confirmation"
