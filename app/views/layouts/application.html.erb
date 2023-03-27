@@ -16,7 +16,9 @@
   <body>
     <%# <div class="homepage-container"> %>
       <%= render "shared/header" %>
-      <div class="main-content"><%= yield %></div>
+      <div class="main-content">
+        <%= yield %>
+      </div>
       <%= render "shared/footer"%>
     <%# </div> %>
   </body>

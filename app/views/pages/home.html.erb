@@ -26,8 +26,9 @@
     <%= line_chart @amount_by_week, colors: ["#4895EF"], label: "weekly overtime", refresh: 3, ytitle: "£" %>
   </div>
 
-  <div>
+  <div class="mb-4">
     <p> Monthly overtime</p>
     <%= line_chart @amount_by_month, colors: ["#B5179E"], label: "monthly overtime", refresh: 3, ytitle: "£"  %>
   </div>
+
 </div>
