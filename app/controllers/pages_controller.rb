@@ -20,7 +20,7 @@ class PagesController < ApplicationController
       hash3[key] = value / 100
     end
 
-    hash4 = Transaction.group_by_day_of_week(:created_at, format: "%a").sum(:price_cents)
+    hash4 = Transaction.group_by_day(:created_at, format: "%a %e %b").where("created_at > ?", Date.today - 8.days).sum(:price_cents)
     @amount_this_week = hash4.each do |key, value|
       hash4[key] = value / 100
     end
