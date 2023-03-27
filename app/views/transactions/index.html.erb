@@ -3,7 +3,7 @@
   <div class="cards-grid-2 mt-1">
   <% @transactions.each do |transaction| %>
     <%= link_to transaction_path(transaction), class: "d-flex card rounded-4 my-2 text-decoration-none" do %>
-      <div class="card-body ">
+      <div class="card-body">
         <div class="d-flex align-items-center justify-content-between">
         <% if transaction.status %>
           <h1 class="mb-0 text-success"><i class="fa-solid fa-circle-arrow-down"></i></h1>

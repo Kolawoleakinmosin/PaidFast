@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+
+puts 'Creating 1500 fake transactions...'
+1500.times do
+  transaction = Transaction.new(
+    price_cents:    Faker::Number.within(range: 1..30),
+    created_at: Faker::Date.between(from: '2023-01-23', to: Date.today),
+    user: User.first
+  )
+  transaction.save!
+end
+puts 'Finished!'
