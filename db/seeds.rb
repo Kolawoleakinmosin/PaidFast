@@ -7,12 +7,13 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-puts 'Creating 1000 fake transactions...'
-1000.times do
+puts 'Creating 1500 fake transactions...'
+1500.times do
   transaction = Transaction.new(
-    price_cents:    Faker::Company.name,
-    created_at: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+    price_cents:    Faker::Number.within(range: 1..30),
+    created_at: Faker::Date.between(from: '2023-01-23', to: Date.today),
+    user: User.first
   )
-  restaurant.save!
+  transaction.save!
 end
 puts 'Finished!'
