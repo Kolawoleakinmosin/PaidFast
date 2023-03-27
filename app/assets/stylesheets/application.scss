@@ -12,8 +12,10 @@
 @import "pages/index";
 
 .homepage-container {
+  max-width: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
   min-height: 100vh;
 }
 body {
