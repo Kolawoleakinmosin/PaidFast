@@ -5,6 +5,21 @@ class PagesController < ApplicationController
   before_action :initialize_qrcode, only: [:qr_generator, :qr_code_download]
 
   def home
+    hash = Transaction.group_by_day(:created_at).sum(:price_cents)
+    @amount_by_day = hash.each do |key, value|
+      hash[key] = value / 100
+    end
+
+    hash = Transaction.group_by_week(:created_at).sum(:price_cents)
+    @amount_by_week = hash.each do |key, value|
+      hash[key] = value / 100
+    end
+
+    hash = Transaction.group_by_month(:created_at).sum(:price_cents)
+    @amount_by_month = hash.each do |key, value|
+      hash[key] = value / 100
+    end
+
   end
 
   def qr_generator
