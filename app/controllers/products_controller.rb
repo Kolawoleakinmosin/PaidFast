@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
       description: @product.description,
       currency: @product.currency
     )
+    @product.user = current_user
 
     @product.stripe_product_id = stripe_product.id
 
@@ -42,9 +43,7 @@ class ProductsController < ApplicationController
     })
 
     @product.save
-
-
-
+    redirect_to qr_code_path, notice: "Product listing was successfully created."
   end
 
   def payment_link

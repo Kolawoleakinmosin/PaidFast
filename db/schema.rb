@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_27_120509) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_27_144055) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,7 +25,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_27_120509) do
 
   create_table "products", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "transaction_id", null: false
     t.string "name"
     t.text "description"
     t.string "currency"
@@ -33,7 +32,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_27_120509) do
     t.datetime "updated_at", null: false
     t.string "stripe_product_id"
     t.string "payment_link_url"
-    t.index ["transaction_id"], name: "index_products_on_transaction_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -65,7 +63,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_27_120509) do
   end
 
   add_foreign_key "accounts", "users"
-  add_foreign_key "products", "transactions"
   add_foreign_key "products", "users"
   add_foreign_key "transactions", "users"
 end
