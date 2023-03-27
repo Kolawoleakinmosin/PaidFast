@@ -7,6 +7,10 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
+puts 'deleting data'
+
+Transaction.delete_all
+
 puts 'Creating 1500 fake transactions...'
 1500.times do
   transaction = Transaction.new(
