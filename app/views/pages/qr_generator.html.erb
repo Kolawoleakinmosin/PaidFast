@@ -1,3 +1,17 @@
+<%# <div class="container mt-4 p-4">
+  <div class="center mb-4">
+    <%= image_tag qr_code_generator_path(format: :png), class: "img-fluid" %>
+  <%# </div> %>
+
+  <%# <div class="center"> %>
+    <%# <%= link_to 'Download', qr_code_download_path(format: :svg), class: "btn btn-primary round shadow" %>
+  <%# </div> %>
+<%# </div> %>
+
+
+
+
+
 <div class="container mt-4 p-4">
     <div class="center mb-4">
       <p><%= @svg.html_safe %></p>
