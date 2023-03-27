@@ -1,19 +1,38 @@
 footer {
-  background-color: #ffffff;
+  margin: 0;
+  background: linear-gradient(90deg,rgba(46,44,45,1) 0% rgba(66,64,67,1) 100%);
+  justify-content: space-evenly;
+  display: flex;
+  align-items: center;
+  background-color: #E4EDFD;
   padding: 10px 20px;
-
-  font-size: 14px;
   position: fixed;
   bottom: 0;
   width: 100%;
+  border: none;
   z-index: 9999;
+  line-height: 1;
+  padding-bottom: 8px;
 
 }
-
-
+.btnfooter {
+  position: fill;
+  padding: 0;
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+  outline: none;
+  margin: 0px;
+  background: linear-gradient(145deg, #E2EDFB, #f0f0f0);
+  box-shadow:  5px 5px 10px #bebebe,
+  -5px -5px 10px #ffffff;
+  color: rgb(2, 2, 2);
+}
+.btn span {
+  font-size: 2em;
+}
 
 footer a {
-  color: #2a2a2a;
+  color: #b5179e;
   text-decoration: none;
-  font-weight: none;
 }

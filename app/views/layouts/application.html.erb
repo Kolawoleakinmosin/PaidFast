@@ -16,10 +16,10 @@
   <body>
     <%# <div class="homepage-container"> %>
       <%= render "shared/header" %>
-      <div class="main-content">
-        <%= yield %>
-      </div>
-      <%= render "shared/footer"%>
+      <div class="main-content"><%= yield %></div>
+   <% if user_signed_in? %>
+   <%= render "shared/footer"%>
+    <% end %>
     <%# </div> %>
   </body>
 </html>
