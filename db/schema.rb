@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_24_043756) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_27_144055) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,7 +19,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_24_043756) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "stripe_id"
     t.index ["user_id"], name: "index_accounts_on_user_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name"
+    t.text "description"
+    t.string "currency"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "stripe_product_id"
+    t.string "payment_link_url"
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "transactions", force: :cascade do |t|
@@ -43,12 +56,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_24_043756) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "payment_link_id", default: "pi_3MpAB8FXuS2Lu4ak1TzbZiOQ"
+    t.string "payment_link_id", default: "pi_3MopBrFXuS2Lu4ak23iBe0ED"
     t.string "stripe_customer_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "accounts", "users"
+  add_foreign_key "products", "users"
   add_foreign_key "transactions", "users"
 end

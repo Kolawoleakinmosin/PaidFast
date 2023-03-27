@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :transactions
+  has_one :product
   has_one :account
 
   # Include default devise modules. Others available are:
