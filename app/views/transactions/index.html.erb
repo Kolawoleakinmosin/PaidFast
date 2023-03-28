@@ -1,20 +1,20 @@
 <div class="container my-3 pt-16">
-  <h1>Transactions</h1>
+  <p class="text-secondary">Updated: <%= Time.now.strftime("%b %e, %l:%M %p") %></p>
   <div class="cards-grid-2 mt-1">
   <% @transactions.each do |transaction| %>
-    <%= link_to transaction_path(transaction), class: "d-flex card rounded-4 my-2 text-decoration-none" do %>
+    <%= link_to transaction_path(transaction), class: "d-flex card cardinfo rounded-4 my-2 text-decoration-none" do %>
       <div class="card-body">
         <div class="d-flex align-items-center justify-content-between">
         <% if transaction.status %>
-          <h1 class="mb-0 text-success"><i class="fa-solid fa-circle-arrow-down"></i></h1>
+          <h1 class="mb-0 text-success"><i class="fa-regular fa-circle-check"></i></h1>
         <% else %>
           <h1 class="mb-0 text-danger"><i class="fa-solid fa-circle-arrow-down"></i></h1>
         <% end %>
           <div class="flex-column justify-content-center d-flex flex-grow-1 px-3">
-            <div><%= transaction.customer_name %></div>
-            <div><p class="text-secondary"><%= transaction.timestamp %><p></div>
+            <h6  class="text"><%= transaction.customer_name %></h6>
+            <div><p class="text-secondary"><%= transaction.timestamp.strftime("%b %e, %l:%M %p") %><p></div>
           </div>
-          <div><%= humanized_money_with_symbol(transaction.price) %></div>
+          <h5 class="text">€<%= transaction.price.to_f.round %></h5>
         </div>
       </div>
     <% end %>

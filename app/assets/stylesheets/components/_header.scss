@@ -1,4 +1,5 @@
 header {
+  // background-color: #EEF0F4;
   background-color: #E2EDFB;
   font-size: 14px;
   position: fixed;
@@ -6,10 +7,11 @@ header {
   width: 100%;
   z-index: 9999;
   border: none;
+  padding-bottom: 5px;
 }
-i {
+header i {
   font-size: 1.5em;
-  color: #b5179e;
+  color: #7375D2;
   padding: 5px;
 }
 

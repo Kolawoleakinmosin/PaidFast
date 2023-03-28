@@ -1,1 +1,26 @@
 
+.cardtransaction {
+  margin-top: 50px;
+  width: 250px;
+  padding: 10px;
+  height: 400px;
+  border-radius: 30px;
+  background: #E2EDFB;
+  box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #ffffff;
+}
+
+.ishow {
+  font-size: 4rem;
+  color: #52b788;
+}
+.arrow {
+  color: #7375D2;
+  font-size: 2rem;
+}
+
+#image {
+  /* the image you want to 'watermark' */
+  height: 30px; /* or whatever, equal to the image you want 'watermarked' */
+  width: 30px; /* as above */
+  }

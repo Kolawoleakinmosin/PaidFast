@@ -2,8 +2,21 @@
   width: 190px;
   height: 150px;
   border-radius: 30px;
-  background: #7209B7;
-  color: white;
+  background: linear-gradient(145deg, #E2EDFB, #f0f0f0);
+  // background: linear-gradient(145deg, #EEF0F4, #f0f0f0);
+  color: #4361EE;
+  font-weight: 500;
   box-shadow: 15px 15px 30px #bebebe,
              -15px -15px 30px #ffffff;
+}
+;
+.cardinfo {
+  background: linear-gradient(145deg, #E2EDFB, #f0f0f0) !important;
+  // background: linear-gradient(145deg, #EEF0F4, #f0f0f0) !important;
+  border: 2px, solid, #373131 !important;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.text {
+  color: rgb(53, 67, 67) !important;
 }
