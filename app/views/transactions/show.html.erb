@@ -12,19 +12,27 @@
         </div>
       </div>
         <div class="text-center">
-        <div class="">
-              <% if @transaction.status =! "pending" %>
-                <h1 class="mb-0 text-success"><i class="fa-regular fa-circle-check"></i></h1>
+        <div class="justify-content-left">
+              <% if @transaction.status == "successful" %>
+                <i class="fa-regular fa-circle-check ishow"></i>
+                <h5>You have received</h5>
+                <h3><%= humanized_money_with_symbol(@transaction.price)%></h3>
+                  <h5>from <%= @transaction.customer_name%></h5>
+                  <h5>on <%= @transaction.timestamp.strftime("%b %e %y,") %></h5>
+                  <h5>at <%= @transaction.timestamp.strftime("%l:%M %p") %></h5>
+
               <% else %>
-                <h1 class="mb-0 text-danger"><i class="fa-solid fa-hourglass-half"></i></h1>
+                <h1 class="mb-0 text-danger"><i class="fa-solid fa-xmark ishow"></i></h1>
+                <h3>The transaction has failed</h3>
               <% end %>
             </div>
-              <p> <h3>You have received</h3> </p>
-             <h1> <%= humanized_money_with_symbol(@transaction.price) %></h1>
-              <p><h3>from<%= @transaction.customer_name%></h3></p>
-              <p><h4>at<%= @transaction.timestamp %></h4></p>
             </div>
+             <div class="d-flex-row bottom">
+             <%= link_to "/transactions" do %>
+              <i class="fa-solid fa-arrow-left arrow"></i>
+              <% end %>
+              </div>
+             </div>
         </div>
-      </div>
   </div>
 </div>
