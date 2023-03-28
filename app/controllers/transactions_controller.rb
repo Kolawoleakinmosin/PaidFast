@@ -1,9 +1,10 @@
 class TransactionsController < ApplicationController
   def index
-    @transactions = Transaction.all
+    @transactions = current_user.transactions
+    @transactions = policy_scope(Transaction)
   end
 
   def show
-   @transaction = Transaction.find(params[:id])
+    @transaction = Transaction.find(params[:id])
   end
 end

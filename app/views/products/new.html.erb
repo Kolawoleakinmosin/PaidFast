@@ -1,0 +1,13 @@
+  <%# <% if current_user.product.blank? %>
+  <h5>Create A Product to start receiving payment</h5>
+  <%= simple_form_for @product do |f| %>
+  <%= f.input :name, label: 'Merchant Name' %>
+  <%= f.input :photo, as: :file %>
+  <%= f.input :description, label: 'Business Description' %>
+  <%= f.button :submit, 'Get Started' %>
+  <% end %>
+
+
+  <%# <% else %>
+  <%# <p>A Button that says Receive Payment</p> %>
+  <%# <% end %>
