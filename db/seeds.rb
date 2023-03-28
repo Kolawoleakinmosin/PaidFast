@@ -14,7 +14,7 @@ Transaction.delete_all
 puts 'Creating 1500 fake transactions...'
 1500.times do
   transaction = Transaction.new(
-    price_cents:    Faker::Number.within(range: 1..30),
+    price_cents:    Faker::Number.within(range: 100..2000),
     created_at: Faker::Date.between(from: '2023-01-23', to: Date.today),
     user: User.first
   )
