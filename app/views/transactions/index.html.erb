@@ -14,7 +14,7 @@
             <h6  class="text"><%= transaction.customer_name %></h6>
             <div><p class="text-secondary"><%= transaction.timestamp.strftime("%b %e, %l:%M %p") %><p></div>
           </div>
-          <h5 class="text">£<%= transaction.price.to_f.round %></h5>
+          <h5 class="text">€<%= transaction.price.to_f.round %></h5>
         </div>
       </div>
     <% end %>
