@@ -18,7 +18,7 @@
 
   <div class="mb-4 dash p-4">
     <p class="d-flex text-secondary justify-content-center"><strong> This Week</strong></p>
-    <%= column_chart @amount_this_week, colors: ["#7375D2", "#4895EF"], ytitle: "€" %>
+    <%= column_chart @amount_this_week, colors: ["#7375D2", "#4895EF"], ytitle: "€",  dataset: { borderWidth: 0 } %>
   </div>
 
   <div class="mb-4 dash p-4">
