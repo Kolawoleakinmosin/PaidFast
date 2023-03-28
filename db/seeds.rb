@@ -17,7 +17,8 @@ puts 'Creating 1500 fake transactions...'
     price_cents:    Faker::Number.within(range: 100..2000),
     user: User.first,
     customer_name: Faker::Name.unique.name,
-    timestamp: Faker::Time.between_dates(from: Date.today - 120, to: Date.today, period: :day)
+    timestamp: Faker::Time.between_dates(from: Date.today - 120, to: Date.today, period: :day),
+    status: "successful"
   )
   transaction.save!
 end
