@@ -11,6 +11,13 @@
 @import "components/index";
 @import "pages/index";
 
+@import 'components/qrcode';
+
+@import 'components/download';
+
+
+
+
 .homepage-container {
   max-width: 100%;
   display: grid;
