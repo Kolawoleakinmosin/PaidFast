@@ -1,32 +1,23 @@
   <footer class="">
 
-  <button class="btn btnfooter">
   <%= link_to "/" do %>
+  <button class="btn btnfooter">
    <span class="fa-solid fa-house ">
   </span>
         <% end %>
   </button>
-
+  <%= link_to "/transactions" do %>
   <button class="btn btnfooter">
-     <%= link_to "/transactions" do %>
     <span class="fa-solid fa-receipt">
   </span>
         <% end %>
   </button>
-
+   <%= link_to "/qr-code" do %>
     <button class="btn btnfooter">
-      <%= link_to "/qr-code" do %>
       <span class="fa-solid fa-qrcode">
   </span>
         <% end %>
 
-  </button>
-
-    <button class="btn btnfooter">
-     <%= link_to "#" do %>
-      <span class="fa-solid fa-gear">
-  </span>
-         <% end %>
   </button>
 
   </footer>

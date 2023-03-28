@@ -1,6 +1,6 @@
 footer {
   margin: 0;
-  background: linear-gradient(90deg,rgba(46,44,45,1) 0% rgba(66,64,67,1) 100%);
+  background: linear-gradient(145deg,#E2EDFB 0% #f0f0f0 100%);
   justify-content: space-evenly;
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@ footer {
   border: none;
   z-index: 9999;
   line-height: 1;
-  padding-bottom: 8px;
+  padding-bottom: 20px;
 
 }
 .btnfooter {
@@ -33,6 +33,6 @@ footer {
 }
 
 footer a {
-  color: #b5179e;
+  color: #7375D2;
   text-decoration: none;
 }

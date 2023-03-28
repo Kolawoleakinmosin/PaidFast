@@ -2,14 +2,16 @@
 
 <div class="my-navbar">
   <div class="d-flex justify-content-between px-3 pt-2 mt-1">
+    <%= link_to root_path do %>
     <%= image_tag "paidfastlogo.png", class: "avatar avatar-xs", data: { titi: "toto" } %>
+    <% end  %>
     <div class="show" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
                <i class="fa-solid fa-user avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Account", "#", class: "dropdown-item" %>
+              <%= link_to "Merchant", "", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
