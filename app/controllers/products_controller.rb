@@ -3,19 +3,24 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    authorize @product
   end
 
   def create
     @product = Product.new(product_params)
+    @product.photo.attach(product_params[:photo])
+
+    @product.user = current_user
+    authorize @product
+    @product.save
     stripe_product = Stripe::Product.create(
       name: @product.name,
       description: @product.description,
-      currency: @product.currency
+      currency: @product.currency,
+      images: [@product.photo.url]
     )
-    @product.user = current_user
 
-    @product.stripe_product_id = stripe_product.id
-
+    @product.update(stripe_product_id: stripe_product.id)
     stripe_price = Stripe::Price.create({
       custom_unit_amount: {
         enabled: true
@@ -33,16 +38,14 @@ class ProductsController < ApplicationController
       ]
     })
 
-    @product.payment_link_url = Stripe::PaymentLink.create({
-      line_items: [
-        {
-          price: stripe_price.id,
-          quantity: 1
-        }
-      ]
-    })
-
-    @product.save
+    # @product.payment_link_url = Stripe::PaymentLink.create({
+    #   line_items: [
+    #     {
+    #       price: stripe_price.id,
+    #       quantity: 1
+    #     }
+    #   ]
+    # })
     redirect_to qr_code_path, notice: "Product listing was successfully created."
   end
 
@@ -51,12 +54,11 @@ class ProductsController < ApplicationController
       line_items: [
         {
           price: 'price_1MqDD8FXuS2Lu4akfqL3mMm9',
-          quantity: 1,
-        },
-      ],
+          quantity: 1
+        }
+      ]
     })
   end
-
 
   private
 
@@ -65,6 +67,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :description)
+    params.require(:product).permit(:name, :description, :photo)
   end
 end
