@@ -46,7 +46,7 @@ class PagesController < ApplicationController
     qr_code = RQRCode::QRCode.new('https://buy.stripe.com/test_bIYdS7gBY4KL2cg9AA')
     png = qr_code.as_png(
       color: '000',
-      module_size: 5, # Make the modules 20 pixels wide and tall
+      module_size: 5,
       standalone: true
     )
     vector_path = Rails.root.join('app', 'assets', 'images', 'vector.png')
@@ -73,69 +73,3 @@ class PagesController < ApplicationController
     @qrcode = RQRCode::QRCode.new("https://buy.stripe.com/test_bIYdS7gBY4KL2cg9AA")
   end
 end
-
-
-#     def qr_generator
-#       qr = RQRCode::QRCode.new("https://buy.stripe.com/test_bIYdS7gBY4KL2cg9AA")
-#       logo_path = Rails.root.join('app', 'assets', 'images', 'logoqr.png')
-#       logo = ChunkyPNG::Image.from_file(logo_path)
-#       @png = qr.as_png(
-#         fill: 'white',
-#         color: '#7209B7',
-#         size: 500,
-#         standalone: true,
-#         use_path: true,
-#         border_modules: 4,
-#         module_px_size: 5,
-#       )
-#     end
-
-#   def qr_code_download
-#     logo_path = Rails.root.join('app', 'assets', 'images', 'logo.png')
-#     logo = ChunkyPNG::Image.from_file(logo_path)
-#     png = @qrcode.qrcode.to_img(size: 500).to_rgba
-#     x = (png.width - logo.width) / 2
-#     y = (png.height - logo.height) / 2
-#     png.compose!(logo, x, y)
-
-#     send_data png.to_blob, filename: "qr_code.png", type: "image/png"
-#   end
-
-#   def playground
-#   end
-
-#   private
-
-#   def initialize_qrcode
-#     @qrcode = RQRCode::QRCode.new("https://buy.stripe.com/test_bIYdS7gBY4KL2cg9AA")
-#   end
-# end
-
-#   def qr_generator
-#     # NOTE: showing with default options specified explicitly
-#     @svg = @qrcode.as_svg(
-#       color: "000",
-#       shape_rendering: "crispEdges",
-#       module_size: 5,
-#       standalone: true,
-#       use_path: true
-#     )
-#   end
-
-#     def qr_code_download
-#       send_data @qrcode.as_svg(
-#         color: "000",
-#         shape_rendering: "crispEdges",
-#         module_size: 5,
-#         standalone: true,
-#         use_path: true
-#       ), filename: "qr_code.svg", type: "image/svg+xml"
-#     end
-
-#   def playground
-#   end
-
-#   def initialize_qrcode
-#     @qrcode = RQRCode::QRCode.new("https://buy.stripe.com/test_bIYdS7gBY4KL2cg9AA")
-#   end
-# end
