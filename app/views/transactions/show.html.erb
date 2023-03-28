@@ -1,18 +1,30 @@
  <div class="container my-3">
     <div class="cardtransaction mx-auto">
-      <div class="card-body ">
-        <div class="">
-            <div class="">
-              <div><%= @transaction.customer_name %></div>
-              <div><p class="text-secondary"><%= @transaction.timestamp %><p></div>
-            </div>
-          <div><%= humanized_money_with_symbol(@transaction.price) %></div>
+      <div class="card-body">
+      <div class="d-flex flex-column">
+        <div class="p-2 d-flex flex-row-reverse justify-content-between">
+          <div>
+            <%= image_tag "vectorlogo.svg", id:"image"%>
+          </div>
+          <div>
+           <h1>#<%=@transaction.id%></h1>
+          </div>
         </div>
-         <% if @transaction.status %>
-            <h1 class="mb-0 text-success"><i class="fa-regular fa-circle-check"></i></h1>
-          <% else %>
-            <h1 class="mb-0 text-danger"><i class="fa-solid fa-hourglass-half"></i></h1>
-          <% end %>
       </div>
-    </div>
+        <div class="text-center">
+        <div class="">
+              <% if @transaction.status =! "pending" %>
+                <h1 class="mb-0 text-success"><i class="fa-regular fa-circle-check"></i></h1>
+              <% else %>
+                <h1 class="mb-0 text-danger"><i class="fa-solid fa-hourglass-half"></i></h1>
+              <% end %>
+            </div>
+              <p> <h3>You have received</h3> </p>
+             <h1> <%= humanized_money_with_symbol(@transaction.price) %></h1>
+              <p><h3>from<%= @transaction.customer_name%></h3></p>
+              <p><h4>at<%= @transaction.timestamp %></h4></p>
+            </div>
+        </div>
+      </div>
   </div>
+</div>
