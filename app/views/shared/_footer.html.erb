@@ -1,23 +1,45 @@
-  <footer class="">
+<footer class="">
 
-  <button class="btn btnfooter">
-  <%= link_to "/dashboard" do %>
-   <span class="fa-solid fa-chart-line">
-  </span>
-        <% end %>
+<% if request.path == "/dashboard" %>
+<button class="btn btnindent">
+    <%= link_to "/dashboard" do %>
+      <span class="fa-solid fa-chart-line"></span>
+    <% end %>
   </button>
+<% else %>
+  <button class="btn btnfooter">
+    <%= link_to "/dashboard" do %>
+      <span class="fa-solid fa-chart-line"></span>
+    <% end %>
+  </button>
+<% end %>
+
+<% if request.path == "/transactions" %>
   <%= link_to "/transactions" do %>
-  <button class="btn btnfooter">
-    <span class="fa-solid fa-receipt">
-  </span>
-        <% end %>
-  </button>
-   <%= link_to "/qr-code" do %>
+      <button class="btn btnindent">
+      <span class="fa-solid fa-receipt"></span>
+    <% end %>
+      </button>
+<% else %>
+  <%= link_to "/transactions" do %>
     <button class="btn btnfooter">
-      <span class="fa-solid fa-qrcode">
-  </span>
-        <% end %>
+    <span class="fa-solid fa-receipt"></span>
+  <% end %>
+    </button>
+<% end %>
 
+<% if request.path == "/qr-code" %>
+  <%= link_to "/qr-code" do %>
+    <button class="btn btnindent">
+    <span class="fa-solid fa-qrcode"></span>
+  <% end %>
   </button>
+<% else %>
+  <%= link_to "/qr-code" do %>
+    <button class="btn btnfooter">
+    <span class="fa-solid fa-qrcode"></span>
+  <% end %>
+  </button>
+<% end %>
 
-  </footer>
+</footer>
