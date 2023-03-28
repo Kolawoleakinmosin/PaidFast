@@ -6,7 +6,7 @@ class TransactionPolicy < ApplicationPolicy
     end
   end
 
-  # def index?
-  #   return record.user == user
-  # end
+  def show?
+    return record.user == user
+  end
 end
