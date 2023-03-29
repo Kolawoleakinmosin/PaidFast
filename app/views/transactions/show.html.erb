@@ -13,7 +13,7 @@
       </div>
         <div class="text-center">
         <div class="justify-content-left">
-              <% if @transaction.status == "successful" %>
+              <% if @transaction.status == "success" %>
                 <i class="fa-regular fa-circle-check ishow"></i>
                 <h5>You have received</h5>
                 <h3><%= humanized_money_with_symbol(@transaction.price)%></h3>
@@ -27,11 +27,6 @@
               <% end %>
             </div>
             </div>
-             <div class="d-flex-row bottom">
-             <%= link_to "/transactions" do %>
-              <i class="fa-solid fa-arrow-left arrow"></i>
-              <% end %>
-              </div>
              </div>
         </div>
   </div>

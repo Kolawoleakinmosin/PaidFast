@@ -62,6 +62,10 @@ gem "rqrcode", "~> 2.0"
 
 #png image
 gem 'chunky_png'
+gem 'rqrcode_png'
+gem 'mini_magick'
+
+
 
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
