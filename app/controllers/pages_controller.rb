@@ -49,30 +49,31 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    hash1 = Transaction.group_by_day(:timestamp).sum(:price_cents)
+    @transactions = current_user.transactions
+    hash1 = @transactions.group_by_day(:timestamp).sum(:price_cents)
     @amount_by_day = hash1.each do |key, value|
       hash1[key] = value / 100
     end
 
-    hash2 = Transaction.group_by_week(:timestamp).sum(:price_cents)
+    hash2 = @transactions.group_by_week(:timestamp).sum(:price_cents)
     @amount_by_week = hash2.each do |key, value|
       hash2[key] = value / 100
     end
 
-    hash3 = Transaction.group_by_month(:timestamp).sum(:price_cents)
+    hash3 = @transactions.group_by_month(:timestamp).sum(:price_cents)
     @amount_by_month = hash3.each do |key, value|
       hash3[key] = value / 100
     end
 
-    hash4 = Transaction.group_by_day(:timestamp, format: "%a %e %b").where("timestamp > ?", Date.today - 8.days).sum(:price_cents)
+    hash4 = @transactions.group_by_day(:timestamp, format: "%a %e %b").where("timestamp > ?", Date.today - 8.days).sum(:price_cents)
     @amount_this_week = hash4.each do |key, value|
       hash4[key] = value / 100
     end
 
-    total = Transaction.where("DATE(timestamp) = ?", Date.today).sum(:price_cents)
+    total = @transactions.where("DATE(timestamp) = ?", Date.today).sum(:price_cents)
     @sum_today = total / 100
 
-    total2 = Transaction.where("DATE(timestamp) = ?", Date.today - 1.days).sum(:price_cents)
+    total2 = @transactions.where("DATE(timestamp) = ?", Date.today - 1.days).sum(:price_cents)
     @sum_yesterday = total2 / 100
   end
 
