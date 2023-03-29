@@ -18,6 +18,7 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 gem "devise"
+gem "pundit"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
@@ -31,6 +32,7 @@ gem "stimulus-rails"
 gem "chartkick"
 
 gem "groupdate"
+gem "cloudinary"
 
 gem 'faker'
 
@@ -60,6 +62,10 @@ gem "rqrcode", "~> 2.0"
 
 #png image
 gem 'chunky_png'
+gem 'rqrcode_png'
+gem 'mini_magick'
+
+
 
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
