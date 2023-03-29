@@ -1,7 +1,6 @@
 class TransactionsController < ApplicationController
   def index
-    @transactions = current_user.transactions.order("timestamp DESC")
-    @transactions = policy_scope(Transaction)
+    @transactions = policy_scope(Transaction).order("timestamp DESC")
   end
 
   def show

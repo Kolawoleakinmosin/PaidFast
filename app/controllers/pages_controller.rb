@@ -48,14 +48,6 @@ class PagesController < ApplicationController
   def playground
   end
 
-  private
-
-  def initialize_qrcode
-    payment_link = current_user.product.payment_link_url
-    @qrcode = RQRCode::QRCode.new(payment_link.to_s)
-    # @qrcode = RQRCode::QRCode.new("https://buy.stripe.com/test_bIYdS7gBY4KL2cg9AA")
-  end
-
   def dashboard
     hash1 = Transaction.group_by_day(:timestamp).sum(:price_cents)
     @amount_by_day = hash1.each do |key, value|
@@ -83,4 +75,12 @@ class PagesController < ApplicationController
     total2 = Transaction.where("DATE(timestamp) = ?", Date.today - 1.days).sum(:price_cents)
     @sum_yesterday = total2 / 100
   end
+
+  private
+
+  def initialize_qrcode
+    payment_link = current_user.product.payment_link_url
+    @qrcode = RQRCode::QRCode.new(payment_link.to_s)
+  end
+
 end
