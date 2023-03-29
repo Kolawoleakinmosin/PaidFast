@@ -22,7 +22,9 @@ class PagesController < ApplicationController
   end
 
   def qr_code_download
-    qr_code = RQRCode::QRCode.new('https://buy.stripe.com/test_bIYdS7gBY4KL2cg9AA')
+    payment_link = current_user.product.payment_link_url
+    qr_code = RQRCode::QRCode.new(payment_link)
+    # qr_code = RQRCode::QRCode.new('https://buy.stripe.com/test_bIYdS7gBY4KL2cg9AA')
     png = qr_code.as_png(
       color: '000',
       module_size: 5,
@@ -49,7 +51,9 @@ class PagesController < ApplicationController
   private
 
   def initialize_qrcode
-    @qrcode = RQRCode::QRCode.new("https://buy.stripe.com/test_bIYdS7gBY4KL2cg9AA")
+    payment_link = current_user.product.payment_link_url
+    @qrcode = RQRCode::QRCode.new(payment_link.to_s)
+    # @qrcode = RQRCode::QRCode.new("https://buy.stripe.com/test_bIYdS7gBY4KL2cg9AA")
   end
 
   def dashboard
