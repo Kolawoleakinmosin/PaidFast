@@ -18,7 +18,21 @@ header i {
 header h2 {
   color: #2a2a2a;
 }
+.dropdown-item  {
+  //background: linear-gradient(145deg, #E2EDFB, #f0f0f0) !important;
+  // background: linear-gradient(145deg, #EEF0F4, #f0f0f0) !important;
+  //border: 2px, solid, #373131 !important;
+  //box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px
+ //
 
+}
+.nmstyle  {
+  overflow: hidden;
+  border-radius: 17px;
+  background: white;
+  box-shadow: 9px 9px 26px #9d9d9d,
+             -9px -9px 26px #ffffff;
+}
 .navbar-lewagon {
   justify-content: space-between;
   background: #7209b7;

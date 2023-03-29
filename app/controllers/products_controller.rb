@@ -39,21 +39,22 @@ class ProductsController < ApplicationController
     })
 
     @product.update(payment_link_url: stripe_payment_link.url)
+    current_user.update(payment_link_id: stripe_payment_link["id"])
 
 
     redirect_to qr_code_path, notice: "Product listing was successfully created."
   end
 
-  def payment_link
-    Stripe::PaymentLink.create({
-      line_items: [
-        {
-          price: 'price_1MqDD8FXuS2Lu4akfqL3mMm9',
-          quantity: 1
-        }
-      ]
-    })
-  end
+  # def payment_link
+  #   Stripe::PaymentLink.create({
+  #     line_items: [
+  #       {
+  #         price: 'price_1MqDD8FXuS2Lu4akfqL3mMm9',
+  #         quantity: 1
+  #       }
+  #     ]
+  #   })
+  # end
 
   private
 
