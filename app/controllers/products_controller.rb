@@ -44,16 +44,16 @@ class ProductsController < ApplicationController
     redirect_to qr_code_path, notice: "Product listing was successfully created."
   end
 
-  def payment_link
-    Stripe::PaymentLink.create({
-      line_items: [
-        {
-          price: 'price_1MqDD8FXuS2Lu4akfqL3mMm9',
-          quantity: 1
-        }
-      ]
-    })
-  end
+  # def payment_link
+  #   Stripe::PaymentLink.create({
+  #     line_items: [
+  #       {
+  #         price: 'price_1MqDD8FXuS2Lu4akfqL3mMm9',
+  #         quantity: 1
+  #       }
+  #     ]
+  #   })
+  # end
 
   private
 
