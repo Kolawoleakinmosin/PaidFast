@@ -3,32 +3,32 @@
   <div class="d-flex cards-grid-2 mt-1 p-3 mr-3">
     <div class="carddash p-4 mx-3 animate__animated animate__zoomIn">
       <div class="mb-4">
-        <h4 class="d-flex mb-4 text-secondary justify-content-center"> Today</h4>
+        <h4 class="d-flex mb-4 text justify-content-center"> Today</h4>
         <h1 class="d-flex justify-content-center"><strong>€<%= @sum_today %></strong></h1>
       </div>
     </div>
 
     <div class="d-flex carddash p-4 mx-3 justify-content-center animate__animated animate__zoomIn">
       <div class="mb-4">
-        <h4 class="d-flex mb-4 text-secondary justify-content-center"> Yesterday</h4>
+        <h4 class="d-flex mb-4 text justify-content-center"> Yesterday</h4>
         <h1 class="d-flex justify-content-center"><strong>€<%= @sum_yesterday %></strong></h1>
       </div>
     </div>
   </div>
 
   <div class="mb-4 dash p-4">
-    <p class="d-flex text-secondary justify-content-center"><strong> This Week</strong></p>
-    <%= column_chart @amount_this_week, colors: ["#7375D2", "#4895EF"], ytitle: "€" %>
+    <p class="d-flex text justify-content-center"><strong> This Week</strong></p>
+    <%= column_chart @amount_this_week, colors: ["rgba(76,201,240,1.000)", "rgba(67,97,238,1.000)", "rgba(72,149,239,1.000)"], ytitle: "€",  dataset: { borderWidth: 0 }, height: "200px" %>
   </div>
 
   <div class="mb-4 dash p-4">
-    <p class="d-flex text-secondary justify-content-center"><strong> Weekly Overtime</strong> </p>
-    <%= area_chart @amount_by_week, colors: ["#4895EF"], label: "weekly overtime", ytitle: "€" %>
+    <p class="d-flex text justify-content-center"><strong> Weekly Overtime</strong> </p>
+    <%= area_chart @amount_by_week, colors: ["#4895EF"], label: "weekly overtime", ytitle: "€", height: "200px" %>
   </div>
 
   <div class="mb-4 dash p-4">
-    <p class="d-flex text-secondary justify-content-center"><strong> Monthly Overtime</strong></p>
-    <%= area_chart @amount_by_month, colors: ["#4CC9F0"], label: "monthly overtime", ytitle: "€"  %>
+    <p class="d-flex text justify-content-center"><strong> Monthly Overtime</strong></p>
+    <%= area_chart @amount_by_month, colors: ["#4CC9F0"], label: "monthly overtime", ytitle: "€", height: "200px" %>
   </div>
 
 </div>

@@ -2,7 +2,7 @@
   <p class="text-secondary">Updated: <%= Time.now.strftime("%b %e, %l:%M %p") %></p>
   <div class="cards-grid-2 mt-1">
   <% @transactions.each do |transaction| %>
-    <%= link_to transaction_path(transaction), class: "d-flex card cardinfo rounded-4 my-2 text-decoration-none" do %>
+    <%= link_to transaction_path(transaction), class: "d-flex card cardinfo rounded-4 my-2 text-decoration-none pt-3" do %>
       <div class="card-body">
         <div class="d-flex align-items-center justify-content-between">
         <% if transaction.status %>
@@ -20,5 +20,4 @@
     <% end %>
   <% end %>
   </div>
-  <p class="text-secondary">Updated: <%= Time.now %></p>
 </div>
