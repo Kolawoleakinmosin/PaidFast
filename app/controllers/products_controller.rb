@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
       product: @product.stripe_product_id
     })
 
-    Stripe::PaymentLink.create({
+    stripe_payment_link = Stripe::PaymentLink.create({
       line_items: [
         {
           price: stripe_price.id,
@@ -38,14 +38,9 @@ class ProductsController < ApplicationController
       ]
     })
 
-    # @product.payment_link_url = Stripe::PaymentLink.create({
-    #   line_items: [
-    #     {
-    #       price: stripe_price.id,
-    #       quantity: 1
-    #     }
-    #   ]
-    # })
+    @product.update(payment_link_url: stripe_payment_link.url)
+
+
     redirect_to qr_code_path, notice: "Product listing was successfully created."
   end
 

@@ -1,4 +1,4 @@
-  <%# <% if current_user.product.blank? %>
+  <% if current_user.product.blank? %>
   <div class="container m-2">
     <h5>Create A Product to start receiving payment</h5>
     <%= simple_form_for @product, input_html: { class: 'form-control' } do |f| %>
@@ -9,9 +9,9 @@
     <% end %>
   </div>
 
-
-
-
-  <%# <% else %>
-  <%# <p>A Button that says Receive Payment</p> %>
-  <%# <% end %>
+  <% else %>
+  <%# <%= link_to 'Receive Payment', qr_code_path, class: "button-new" %>
+  <a href="<%= qr_code_path %>">
+  <button class="button-new">Receive Payment</button>
+  </a>
+  <% end %>
