@@ -1,5 +1,5 @@
 .banner {
-  background-image: image-url('homephone.png') !important;
+  background-image: image-url('homephone.png');
   height: 100vh;
   // width: 150px;
   background-size: cover;
@@ -49,5 +49,10 @@
 }
 
 .color {
-  color: #4CC9F0;
+  color: #ffffff;
+}
+
+.color2 {
+  color: #95e5fd;
+  margin-left: 8px;
 }
