@@ -18,7 +18,6 @@ Product.destroy_all
 puts 'deleting user'
 User.destroy_all
 
-
 puts 'creating user'
 User.create!(first_name: "Karmen", last_name: "de Reuck", email: "dereuckkarmen@gmail.com", password: "123456", business_name: "Loafy")
 

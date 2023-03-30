@@ -15,7 +15,7 @@ class PagesController < ApplicationController
     @svg = @qrcode.as_svg(
       color: "000",
       shape_rendering: "crispEdges",
-      module_size: 5,
+      module_size: 8,
       standalone: true,
       use_path: true
     )

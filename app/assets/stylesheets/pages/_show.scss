@@ -1,13 +1,16 @@
 
+.centercard {
+  height: 70vh;
+  align-items: center;
+}
 .cardtransaction {
-  margin-top: 50px;
   width: 250px;
   padding: 10px;
   height: 400px;
   border-radius: 30px;
   background: #E2EDFB;
-  box-shadow: 15px 15px 30px #bebebe,
-             -15px -15px 30px #ffffff;
+  box-shadow: 15px 15px 40px #dedede,
+             -15px -15px 45px #ffffff;
 }
 
 .ishow {
