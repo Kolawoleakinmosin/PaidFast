@@ -32,14 +32,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   </head>
-
-  <body>
-    <%# <div class="homepage-container"> %>
-      <%= render "shared/header" %>
-      <div class="main-content"><%= yield %></div>
-   <% if user_signed_in? %>
-   <%= render "shared/footer"%>
+  
+    <% if current_page?(root_path) %>
+      <body class="body-home">
+    <% else %>
+      <body>
     <% end %>
-    <%# </div> %>
-  </body>
-</html>
+
+    <% if current_page?(root_path) %>
+    <% else %>
+      <%= render "shared/header" %>
+    <% end %>
+
+    <% if current_page?(root_path) %>
+      <div class="main-home-content"><%= yield %></div>
+    <% else %>
+      <div class="main-content"><%= yield %></div>
+    <% end %>
+
+    <% if user_signed_in? %>
+      <% unless current_page?(root_path) %>
+      <%= render "shared/footer"%>
+    <% end %>
+      <% end %>
+
+        <%# </div> %>
+      </body>
+    </html>

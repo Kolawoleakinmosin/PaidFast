@@ -1,0 +1,27 @@
+<header>
+
+<div class="my-navbar header2">
+  <div class="d-flex justify-content-between px-3 pt-2 mt-1">
+    <%= link_to root_path do %>
+    <%= image_tag "vectorlogo.svg", class: "avatar avatar-xs", data: { titi: "toto" } %>
+    <% end  %>
+    <div class="show" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown shadow-inset">
+               <i class="fa-solid fa-user avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+            <div class="dropdown-menu dropdown-menu-end nmstyle" aria-labelledby="navbarDropdown">
+              <%= link_to "Merchant", new_product_path, class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+</header>

@@ -1,2 +1,53 @@
+.banner {
+  background-image: image-url('homephone.png') !important;
+  height: 100vh;
+  // width: 150px;
+  background-size: cover;
+  background-position: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  background-repeat: no-repeat;
+  top: 0;
+  overflow: hidden;
+  padding: 16px;
+}
+
+.text-box {
+  // height: 120px;
+  // width: 190px;
+  // border-radius: 40px;
+  // flex-direction: end;
+  align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  color: white;
+  vertical-align: end;
+}
 // Specific CSS for your home-page
 
+.homebutton {
+  background-color: white;
+  color: rgb(35, 60, 143);
+  padding: 18px 10px;
+  border-radius: 20px;
+  font-size: 20px;
+
+}
+
+.text-box p {
+  font-size: 18px;
+}
+
+.text-box h1 {
+  font-size: 40px;
+}
+
+.buttontext {
+  font-size: 10px;
+  margin-left: 12px;
+  font-weight: 600;
+}
+
+.btn span {
+  font-size: 20px;
+}
