@@ -1,32 +1,32 @@
-<div class="container my-3">
-    <div class="cardtransaction mx-auto position-relative">
-      <div class="card-body">
+<div class="d-flex centercard justify-content-center align-middle">
+  <div class="d-flex cardtransaction ">
+    <div class="card-body">
       <div class="d-flex flex-column">
         <div class="p-2 d-flex flex-row-reverse justify-content-between">
           <div>
             <%= image_tag "vectorlogo.svg", id:"image"%>
           </div>
           <div>
-           <h5 class="text transact p-2 round shadow">#<%=@transaction.id%></h5>
+            <h5 class="text transact p-2 round shadow">#<%=@transaction.id%></h5>
           </div>
         </div>
       </div>
-        <div class="text-center">
+      <div class="text-center">
         <div class="justify-content-left pb-3">
-              <% if @transaction.status %>
-                <h5 class="pt-3"><i class="fa-regular fa-circle-check ishow"></i></h5>
-                <h3 class="text pt-3"><%= humanized_money_with_symbol(@transaction.price)%></h3>
-                <h5 class="text">from <%= @transaction.customer_name %></h5>
-                <div class="position-absolute bottom-0 end-0 p-3">
-                  <h6 class="pt-4 text-secondary"> <%= @transaction.timestamp.strftime("%b %e, %l:%M %p") %></h6>
-                </div>
-              <% else %>
-                <h1 class="mb-0 text-danger"><i class="fa-solid fa-xmark ishow"></i></h1>
-                <h3>The transaction has failed</h3>
-              <% end %>
+          <% if @transaction.status %>
+          <h5 class="pt-3"><i class="fa-regular fa-circle-check ishow"></i></h5>
+          <h3 class="text pt-3"><%= humanized_money_with_symbol(@transaction.price)%></h3>
+          <h5 class="text">from <%= @transaction.customer_name %></h5>
+            <div class="">
+              <h6 class="pt-4 text-secondary"> <%= @transaction.timestamp.strftime("%b %e, %l:%M %p") %></h6>
             </div>
-            </div>
-             </div>
+            <% else %>
+              <h1 class="mb-0 text-danger"><i class="fa-solid fa-xmark ishow"></i></h1>
+              <h3>The transaction has failed</h3>
+            <% end %>
+          </div>
         </div>
+      </div>
+    </div>
   </div>
 </div>
