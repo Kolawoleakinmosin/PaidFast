@@ -27,6 +27,7 @@
  }
 
  .download {
+  overflow: hidden;
   position: absolute;
   inset: 0;
   display: flex;
@@ -35,7 +36,7 @@
   max-width: 90%;
   margin: 0 auto;
   z-index: -1;
-  border-radius: 4px;
+  border-radius: 0px;
   transform: translateY(0%);
   background-color: #54ffcf;
   border: solid 1px #01e0572d;
