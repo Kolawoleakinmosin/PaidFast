@@ -9,6 +9,7 @@
     "bootstrap": "^5.2.3",
     "chart.js": "^4.2.1",
     "chartkick": "^5.0.1",
+    "typed.js": "^2.0.14",
     "webpack": "^5.76.2",
     "webpack-cli": "^5.0.1"
   },
