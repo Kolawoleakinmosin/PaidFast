@@ -1,3 +1,20 @@
-banner {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image-url('bannerpng.png') !important;
+.banner {
+  background-image: image-url('justphone.png') !important;
+  height: 380px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-repeat: no-repeat;
+
+}
+
+.text-box {
+  background-color: #4361EE;
+  height: 150px;
+  width: 180px;
+  border-radius: 40px;
+
+
 }

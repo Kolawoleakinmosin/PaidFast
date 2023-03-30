@@ -5,7 +5,9 @@
     <%= f.input :name, label: 'Merchant Name'%>
     <%= f.input :photo, as: :file %>
     <%= f.input :description, label: 'Business Description' %>
-    <%= f.button :submit, 'Get Started', class: 'submit'  %>
+    <div class="d-flex justify-content-end">
+      <%= f.button :submit, 'Get Started', class: 'submit' %>
+    </div>
     <% end %>
   </div>
 

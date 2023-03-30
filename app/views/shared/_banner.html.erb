@@ -1,7 +1,9 @@
 <div class="banner">
   <div class="container">
-    <h1>Get paid. Fast</h1>
-    <p>Digitsing payment for those who need it.</p>
+    <div class="text-box d-flex">
+      <h1>Get paid. Fast</h1>
+      <p>Digitsing payment for those who need it.</p>
+    </div>
     <% if user_signed_in? %>
       <div class="btn-wrapper d-none">
       <a class="btn btn-flat" href="<%= new_user_session_path %>">Login</a>
