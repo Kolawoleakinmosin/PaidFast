@@ -49,3 +49,21 @@ header h2 {
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.header2 {
+  // background-color: #EEF0F4;
+  background-color: #516DF9;
+  font-size: 14px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  border: none;
+  padding-bottom: 5px;
+}
+
+.header2 i {
+  font-size: 1.5em;
+  color: #fefefe;
+  padding: 5px;
+}
